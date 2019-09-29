@@ -32,16 +32,17 @@ function calc(iNum1, iNum2, sOpr)
 function doInput()
 {
 	var oInput=document.getElementById('input1');
-	var sHtml=this.innerHTML.replace(' ','');
+	var sHtml=this.innerHTML;//innerHTML是从目标标签中从开始标记<div到结束标记之间的所有内容.replace(' ','')
+	//这个this指的是li，写着数字的东西。用这种方式来获取上面的数字以及符号。
 	
 	switch(sHtml)
 	{
-		case '=':
+		case '='://等于比较特殊，因为真正的运算实际上是发生在等于的时候
 			oInput.value=calc(parseInt(sNum1), parseInt(oInput.value), sOpr);
 			
 			sNum1='';
 			sOpr='';
-			bNeedClear=true;
+			bNeedClear=true;//因为无法覆盖，所以每次操作之后都要进行bNeed的清除操作，把之前的内容清除掉
 			break;
 		case '+':
 		case '-':
@@ -54,9 +55,9 @@ function doInput()
 				oInput.value=calc(parseInt(sNum1), parseInt(oInput.value), sOpr);
 			}
 			
-			sOpr=sHtml;
+			sOpr=sHtml;//提取出的符号？
 			
-			sNum1=oInput.value;
+			sNum1=oInput.value;//这个东西能提出input中的数字吗？要是不是第一个sunm会有数字
 			break;
 		case 'C':
 			oInput.value='0';
@@ -81,7 +82,7 @@ window.onload=function ()
 {
 	var aLi=document.getElementsByTagName('li');
 	var i=0;
-	
+	//这里就是将底下的方块和上面的输入框连起来的地方用parseint这个东西
 	for(i=0;i<aLi.length;i++)
 	{
 		aLi[i].onmousedown=doInput;
