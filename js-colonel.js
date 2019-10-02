@@ -13,11 +13,12 @@ function suan(iNum1,iNum2,s0p1) {
             break;
         case "×":
             iReault=iNum1*iNum2;
+            break;
         case "÷":
             iReault=iNum1/iNum2;
-
+            break;
 
     }
-
+  return iReault;
 
 }

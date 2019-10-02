@@ -28,13 +28,13 @@ function calc(iNum1, iNum2, sOpr)
 	
 	return iResult;
 }
-
+//算数模块
 function doInput()
 {
 	var oInput=document.getElementById('input1');
 	var sHtml=this.innerHTML;//innerHTML是从目标标签中从开始标记<div到结束标记之间的所有内容.replace(' ','')
 	//这个this指的是li，写着数字的东西。用这种方式来获取上面的数字以及符号。
-	
+	//取得内容模块
 	switch(sHtml)
 	{
 		case '='://等于比较特殊，因为真正的运算实际上是发生在等于的时候
@@ -76,7 +76,7 @@ function doInput()
 			}
 			break;
 	}
-}
+}//模拟计算器行为模块
 
 window.onload=function ()
 {
@@ -95,7 +95,7 @@ window.onload=function ()
 		{
 			this.className='';
 		};
-	}
+	}//执行模块
 	(function (){
 		var oS=document.createElement('script');
 			
