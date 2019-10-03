@@ -39,7 +39,6 @@ function doInput()
 	{
 		case '='://等于比较特殊，因为真正的运算实际上是发生在等于的时候
 			oInput.value=calc(parseInt(sNum1), parseInt(oInput.value), sOpr);
-			
 			sNum1='';
 			sOpr='';
 			bNeedClear=true;//因为无法覆盖，所以每次操作之后都要进行bNeed的清除操作，把之前的内容清除掉
@@ -53,11 +52,13 @@ function doInput()
 			if(sNum1.length!=0)
 			{
 				oInput.value=calc(parseInt(sNum1), parseInt(oInput.value), sOpr);
-			}
+			}//
 			
 			sOpr=sHtml;//提取出的符号？
 			
 			sNum1=oInput.value;//这个东西能提出input中的数字吗？要是不是第一个sunm会有数字
+			//用oinput，value这个属性作为中转
+			//value是一个input中特有的属性。https://www.w3school.com.cn/tags/att_input_value.asp
 			break;
 		case 'C':
 			oInput.value='0';
@@ -72,7 +73,7 @@ function doInput()
 			}
 			else
 			{
-				oInput.value=parseInt(oInput.value+sHtml, 10);
+				oInput.value=parseInt(oInput.value+sHtml, 10);//十进制数
 			}
 			break;
 	}
